@@ -2,8 +2,8 @@ import React from "react";
 
 export default function Header() {
   return (
-    <header className="p-1 bg-emerald-500">
-      <div className="container flex justify-between h-16">
+    <header className="p-1 shadow-lg font-mono font-semibold ">
+      <div className="container flex justify-between h-16 ">
         <a rel="noopener noreferrer" href="#" aria-label="Back to homepage" className="flex items-center ">
           <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
             width="100pt" height="100" viewBox="0 0 250 205"

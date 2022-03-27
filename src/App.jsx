@@ -1,6 +1,7 @@
-import react from "react"
+
 import Header from "./components/Header"
 import Footer from "./components/Footer"
+import HomeScreen from "./Screens/HomeScreen"
 
 function App() {
 
@@ -8,8 +9,9 @@ function App() {
   return (
     <div>
       <Header></Header>
-      <main className=" py-3">
-        <h1>Welcome to TrustOnly Shop</h1>
+      <main className="">
+        <h1 className=" font-mono text-center">Browse our latest articles</h1>
+          <HomeScreen></HomeScreen>
       </main>
       <Footer></Footer>
     </div>
