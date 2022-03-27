@@ -2,11 +2,11 @@ import React from "react";
 
 export default function Header() {
   return (
-    <header className="p-4 ">
-      <div className="container flex justify-between h-16 mx-auto">
-        <a rel="noopener noreferrer" href="#" aria-label="Back to homepage" className="flex items-center p-2">
+    <header className="p-1 bg-emerald-500">
+      <div className="container flex justify-between h-16">
+        <a rel="noopener noreferrer" href="#" aria-label="Back to homepage" className="flex items-center ">
           <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
-            width="100pt" height="205.000000pt" viewBox="0 0 268 205"
+            width="100pt" height="100" viewBox="0 0 250 205"
             preserveAspectRatio="xMidYMid meet">
 
             <g transform="translate(0.000000,205.000000) scale(0.100000,-0.100000)"
@@ -88,15 +88,29 @@ c-25 30 -45 58 -46 61 0 3 16 13 35 22 19 9 35 21 35 27 0 8 -289 160 -304
           </svg>
         </a>
 
-        <div className="items-center flex-shrink-0 hidden lg:flex">
-          <button className="self-center px-8 py-3 rounded">Sign in</button>
-          <button className="self-center px-8 py-3 font-semibold rounded dark:bg-violet-400 dark:text-coolGray-900">Sign up</button>
+        <div className="items-center flex-shrink-0 flex md:flex lg:flex ">
+          <a href="" className=" no-underline mr-5">
+            <i>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+            </i>
+            <p>
+              Cart
+            </p>
+          </a>
+          <a href="" className=" no-underline mr-5">
+            <i>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+              </svg>
+            </i>
+            <p>
+              Sign in/up
+            </p>
+          </a>
+
         </div>
-        <button className="p-4 lg:hidden">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6 dark:text-coolGray-100">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-        </button>
       </div>
     </header>
   )
