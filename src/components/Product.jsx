@@ -6,14 +6,14 @@ export default function Product(props) {
             <a href="#">
                 <img src={props.img} alt="test" className="object-cover object-center w-full h-72 dark:bg-coolGray-500" />
                 <div className=' px-3 '>
-                    <p>{props.price}</p>
+                    <p className=' text-2xl'>{props.price}</p>
                     <p><strong>
-
                         {props.name}
                     </strong>
                     </p>
                 </div>
-                <div className="p-3">
+            </a>
+            <div className="p-3">
                     <div className="flex items-center justify-between">
                         <div className="flex items-center space-x-3">
                             <button type="button" title="Like" className="flex items-center justify-center">
@@ -39,7 +39,6 @@ export default function Product(props) {
                         </button>
                     </div>
                 </div>
-            </a>
 
         </div>
     )

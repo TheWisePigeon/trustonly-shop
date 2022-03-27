@@ -43,6 +43,17 @@ const products = [
             "Article en très bon état à la réception"
         ],
     },
+    {
+        _id: "4",
+        img: "https://source.unsplash.com/301x301/?random",
+        price: 15000,
+        name: "Random article",
+        likes: 10,
+        comments: [
+            "Ouii, ouiiiiiii", 
+            "Article en très bon état à la réception"
+        ],
+    },
 ]
 
 export default products
