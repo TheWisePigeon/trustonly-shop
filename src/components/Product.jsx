@@ -1,9 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Product(props) {
     return (
         <div className="rounded-md shadow-lg sm:w-96 m-2 font-semibold font-mono ">
-            <a href="#">
+            <Link to={`/product/${props.id}`}>
                 <img src={props.img} alt="test" className="object-cover object-center w-full h-72 dark:bg-coolGray-500" />
                 <div className=' px-3 '>
                     <p className=' text-2xl'>{props.price}</p>
@@ -12,7 +13,7 @@ export default function Product(props) {
                     </strong>
                     </p>
                 </div>
-            </a>
+            </Link>
             <div className="p-3">
                     <div className="flex items-center justify-between">
                         <div className="flex items-center space-x-3">
