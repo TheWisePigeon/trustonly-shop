@@ -9,7 +9,7 @@ function App() {
   return (
     <div>
       <Header></Header>
-      <main className="">
+      <main className=" bg-white ">
         <h1 className=" font-mono text-center">Browse our latest articles</h1>
           <HomeScreen></HomeScreen>
       </main>

@@ -1,9 +1,9 @@
 const products = [
     {
         _id: "1",
-        img: "",
+        img: "https://source.unsplash.com/301x301/?random",
         price: 15000,
-        name: "",
+        name: "Random article",
         likes: 100,
         comments: [
             "Super cool lol", 
@@ -11,10 +11,10 @@ const products = [
         ],
     },
     {
-        _id: "1",
-        img: "",
+        _id: "2",
+        img: "https://source.unsplash.com/301x301/?random",
         price: 15000,
-        name: "",
+        name: "Random article",
         likes: 3,
         comments: [
             "ah merde c'est pourri", 
@@ -22,10 +22,10 @@ const products = [
         ],
     },
     {
-        _id: "1",
-        img: "",
+        _id: "3",
+        img: "https://source.unsplash.com/301x301/?random",
         price: 15000,
-        name: "",
+        name: "Random article",
         likes: 12,
         comments: [
             "Super cool lol", 
@@ -33,10 +33,10 @@ const products = [
         ],
     },
     {
-        _id: "1",
-        img: "",
+        _id: "4",
+        img: "https://source.unsplash.com/301x301/?random",
         price: 15000,
-        name: "",
+        name: "Random article",
         likes: 10,
         comments: [
             "Ouii, ouiiiiiii", 
@@ -44,3 +44,5 @@ const products = [
         ],
     },
 ]
+
+export default products
