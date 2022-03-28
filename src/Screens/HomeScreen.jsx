@@ -1,6 +1,4 @@
 import React from 'react'
-import Footer from '../components/Footer'
-import Header from '../components/Header'
 import Product from '../components/Product'
 import products from '../products'
 
@@ -16,7 +14,6 @@ export default function HomeScreen() {
 
     return (
         <>
-            <Header></Header>
             <div className='flex flex-wrap justify-center pt-5 '>
                 {
                     products.map(
@@ -24,7 +21,6 @@ export default function HomeScreen() {
                     )
                 }
             </div>
-            <Footer></Footer>
         </>
     )
 }
