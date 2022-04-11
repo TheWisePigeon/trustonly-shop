@@ -9,7 +9,3 @@ import '../tailwind/tailwind.css'
   <router-view></router-view>
   <AppFooter />
 </template>
-
-<style>
-
-</style>

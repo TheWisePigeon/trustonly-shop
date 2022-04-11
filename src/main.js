@@ -6,8 +6,12 @@ const router = createRouter({
     history: createWebHistory(),
     routes: [
         {
-            path: '/products',
-            component: () => import('./components/Products/ProductItem.vue')
+            path: '/',
+            component: () => import('./components/Products/ProductsList.vue')
+        },
+        {
+            path: '/test',
+            component: () => import('./components/Products/ProductsList.vue')
         }
     ]
 });
