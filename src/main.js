@@ -10,8 +10,16 @@ const router = createRouter({
             component: () => import('./components/Products/ProductsList.vue')
         },
         {
-            path: '/test',
-            component: () => import('./components/Products/ProductsList.vue')
+            path: '/login',
+            component: () => import('./components/auth/LoginPage.vue')
+        },
+        {
+            path: '/register',
+            component: () => import('./components/auth/RegisterPage.vue')
+        },
+        {
+            path: '/checkout',
+            component: () => import('./components/auth/LoginPage.vue')
         }
     ]
 });
