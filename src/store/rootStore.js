@@ -33,7 +33,7 @@ const store = createStore({
             })
         },
         login(context, user){
-
+            
             context.commit('login', user)
         },
         logout(context){
