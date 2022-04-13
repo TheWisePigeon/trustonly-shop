@@ -16,14 +16,36 @@ export default {
             return (this.user.password == this.cfrmpwd) ? true : false;
         }
     },
+    methods: {
+        // register() {
+        //     if (this.isValid) {
+        //         fetch('http://localhost:5000/v1/new/user', {
+        //             method: 'POST',
+        //             headers: {
+        //                 'Content-Type': 'application/json'
+        //             },
+        //             body: JSON.stringify(this.user)
+        //         })
+        //             .then(response => response.json())
+        //             .then(data => {
+        //                 console.log(data);
+        //                 this.$router.replace('/');
+        //             })
+        //             .catch(err => console.log(err));
+        //     }
+        // }
+        register(){
+            this.$store.dispatch('register', this.user)
+        }
+    },
 }
 </script>
 
 <template>
     <div class=" flex justify-center h-screen items-center">
         <form
-            class=" bg-green-500 p-4 flex-col space-y-4 text-center shadow-xl mx-3 rounded-lg space-x-1 lg:flex lg:w-96 "
-            action="" method="post" @submit.prevent="login">
+            class=" bg-green-500 p-4 flex-col space-y-4 text-center shadow-xl mx-3 rounded-lg space-x-1 lg:flex lg:w-96 " @submit.prevent="register"
+            action="" method="post">
             <input class=" border-2 rounded-lg text-center focus:outline-none" type="text" name="name"
                 v-model="user.name" required id="name" placeholder="Your name">
             <input class=" border-2 rounded-lg text-center focus:outline-none" type="email" name="email"
