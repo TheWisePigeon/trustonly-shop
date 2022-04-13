@@ -3,24 +3,35 @@ export default {
     data() {
         return {
             user: {
-                name: '',
                 email: '',
                 password: '',
             },
-            errors: {}
         }
+    },
+    methods: {
+        login() {
+            this.$store.dispatch('login', this.user)
+        },
     },
 }
 </script>
 
 <template>
     <div class=" flex justify-center h-screen items-center">
-        <form class=" bg-green-500 p-4 space-y-4 text-center shadow-xl mx-3 rounded-lg space-x-1" action="" method="post">
-            <input class=" border-2 rounded-lg text-center" type="email" name="name" id="name" placeholder="You@domain.com">
-            <input class=" border-2 rounded-lg text-center" type="password" name="password" id="pwd" placeholder="Your password"><br>
-            <button class=" text-white border-2 rounded-lg px-2" type="submit">Login</button><br>
-            No account?<router-link to="/register" class=" text-blue-600">Register</router-link>
+        <form
+            class=" bg-green-500 p-4 space-y-4 flex-col text-center shadow-xl mx-3 rounded-lg space-x-1 lg:flex  lg:w-96"
+            action="" method="post">
+            <input class=" border-2 rounded-lg text-center focus:outline-none" type="email" v-model="user.email"
+                name="name" id="name" placeholder="You@domain.com">
+            <span class=" text-red-700 hidden">email not found</span>
+            <input class=" border-2 rounded-lg text-center focus:outline-none" type="password" v-model="user.password"
+                name="password" id="pwd" placeholder="Your password">
+            <span class=" text-red-700 hidden">wrong password</span>
+            <button class=" text-white border-2 rounded-lg px-2" type="submit">Login</button>
+            <div>
+                No account? <router-link to="/register" class=" text-blue-600">Register</router-link>
+            </div>
         </form>
-        
+
     </div>
 </template>
