@@ -1,11 +1,13 @@
 <script>
 import ShopCart from "./ShopCart.vue";
-import UserProfile from "./UserProfile.vue";
+import UserProfile from "./userComps/UserAvatar.vue";
+import UserSettingsVue from './userComps/UserSettings.vue';
 
 export default {
   components: {
     'ShopCart': ShopCart,
-    'UserProfile': UserProfile
+    'UserProfile': UserProfile,
+    'UserSettings': UserSettingsVue,
   }
 };
 </script>
@@ -19,7 +21,8 @@ export default {
     </div>
     <div class=" flex space-x-2">
       <ShopCart/>
-      <UserProfile/>
+      <UserProfile v-if="!this.$store.state.isLoggedIn"/>
+      <UserSettings v-if="this.$store.state.isLoggedIn"/>
     </div>
   </header>
 </template>
