@@ -18,8 +18,10 @@ const store = createStore({
             state.isLoggedIn = true
         },
         logout(state) {
-            state.user = {}
-        }
+            state.user = {},
+                state.isLoggedIn = false
+        },
+
     },
     getters: {
         isLoggedIn(state) {
@@ -42,8 +44,22 @@ const store = createStore({
                 })
         },
         login(context, user) {
-
-            context.commit('login', user)
+            fetch('http://localhost:5000/v1/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(user)
+                })
+                .then(res => res.json())
+                .then(res => {
+                    if (res.success) {
+                        context.commit('login', res.user)
+                        router.replace('/')
+                    } else {
+                        alert(res.message)
+                    }
+                })
         },
         logout(context) {
             context.commit('logout')
