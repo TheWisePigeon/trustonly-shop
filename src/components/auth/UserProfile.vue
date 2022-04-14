@@ -6,6 +6,11 @@ export default {
             user: store.state.user,
         }
         
+    },
+    methods:{
+        logout(){
+            store.dispatch("logout")
+        }
     }
 }
 </script>
@@ -14,5 +19,6 @@ export default {
     <div>
         <p>Name: {{this.user.name}} </p>
         <p>Email: {{this.user.email}} </p>
+        <button @click="logout">Logout</button>
     </div>
 </template>
