@@ -22,7 +22,7 @@ const router = createRouter({
             component: () => import('./components/auth/UserProfile.vue')
         },
         {
-            path: '/checkout',
+            path: '/cart',
             component: () => import('./components/auth/LoginPage.vue')
         }
     ]

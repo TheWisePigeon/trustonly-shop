@@ -33,8 +33,7 @@ export default {
             <span class="visually-hidden">. . .</span>
         </div>
     </div>
-    <div v-else class="" v-for="product in products" :key="product._id">
+    <div v-else class=" flex justify-center" v-for="product in products" :key="product._id">
         <ProductItem :product="product" />
-
     </div>
 </template>
