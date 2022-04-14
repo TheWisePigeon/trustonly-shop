@@ -18,7 +18,20 @@ export default {
                     this.products = json
                 })
             this.isLoading = false
+        },
+        viewItem() {
+            console.log("view")
+        },
+        shareItem(){
+            console.log("share")
+        },
+        viewComments(){
+            console.log("comment")
+        },
+        likeItem(){
+            console.log("like")
         }
+
     },
     mounted() {
         this.fetchProducts()
@@ -33,7 +46,7 @@ export default {
             <span class="visually-hidden">. . .</span>
         </div>
     </div>
-    <div v-else class=" flex justify-center" v-for="product in products" :key="product._id">
-        <ProductItem :product="product" />
+    <div v-else class=" flex justify-center " v-for="product in products" :key="product._id">
+        <ProductItem @view-item="viewItem" @share-item="shareItem" @view-comments="viewComments" @like-item="likeItem" :product="product" />
     </div>
 </template>
