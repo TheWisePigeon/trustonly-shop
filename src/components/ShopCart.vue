@@ -11,7 +11,7 @@ export default {
 
 <template>
     <div>
-        <router-link to="/cart">
+        <router-link to="/test">
             <div class=" bg-red-500 text-white font-bold px-1 rounded">
                 {{ cartCount }}
             </div>

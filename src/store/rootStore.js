@@ -34,7 +34,7 @@ const store = createStore({
             return state.isLoggedIn
         },
         isInCart(state, product) {
-                return state.cart.includes(product._id)
+                return state.cart.includes(product)
         },
         cartCount(state) {
             return state.cart.length
@@ -77,7 +77,7 @@ const store = createStore({
             context.commit('logout')
         },
         addToCart(context, product) {
-            context.commit('addToCart', product._id)
+            context.commit('addToCart', product)
         },
         removeFromCart(context, product) {
             context.commit('removeFromCart', product)
