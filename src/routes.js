@@ -24,6 +24,9 @@ const router = createRouter({
         {
             path: '/cart',
             component: () => import('./components/auth/LoginPage.vue')
+        },
+        {
+            path: '/test',
         }
     ]
 });

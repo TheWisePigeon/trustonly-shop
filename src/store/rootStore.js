@@ -9,22 +9,10 @@ const store = createStore({
         return {
             isLoggedIn: false,
             user: {},
-            products: [],
             cart: [],
         }
     },
     mutations: {
-        initializeStore(state) {
-            // Check if the ID exists
-            if (localStorage.getItem('store')) {
-                console.log(localStorage.getItem('store'));
-                // Replace the state object with the stored item
-                this.replaceState(
-                    Object.assign(state, JSON.parse(localStorage.getItem('store')))
-                )
-            }
-        },
-
         login(state, user) {
             state.user = user
             state.isLoggedIn = true
@@ -33,11 +21,23 @@ const store = createStore({
             state.user = {},
                 state.isLoggedIn = false
         },
+        addToCart(state, product){
+            state.cart.push(product)
+        },
+        removeFromCart(state, product){
+            state.cart.splice(state.cart.indexOf(product), 1)
+        }
 
     },
     getters: {
         isLoggedIn(state) {
             return state.isLoggedIn
+        },
+        isInCart(state, product) {
+                return state.cart.includes(product._id)
+        },
+        cartCount(state) {
+            return state.cart.length
         },
     },
     actions: {
@@ -75,9 +75,17 @@ const store = createStore({
         },
         logout(context) {
             context.commit('logout')
+        },
+        addToCart(context, product) {
+            context.commit('addToCart', product._id)
+        },
+        removeFromCart(context, product) {
+            context.commit('removeFromCart', product)
         }
     },
-    plugins: [createPersistedState()]
+    // plugins: [createPersistedState({
+    //     storage: window.sessionStorage
+    // })]
 })
 
 export default store;

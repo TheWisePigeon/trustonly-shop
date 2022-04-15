@@ -30,6 +30,15 @@ export default {
         },
         likeItem(){
             console.log("like")
+        },
+        addToCart(product){
+            this.$store.dispatch("addToCart", product)
+        },
+        removeFromCart(product){
+            this.$store.dispatch("removeFromCart", product)
+        },
+        likeItem(product){
+            this.$store.dispatch("likeItem", product)
         }
 
     },
@@ -47,6 +56,6 @@ export default {
         </div>
     </div>
     <div v-else class=" flex justify-center " v-for="product in products" :key="product._id">
-        <ProductItem @view-item="viewItem" @share-item="shareItem" @view-comments="viewComments" @like-item="likeItem" :product="product" />
+        <ProductItem @view-item="viewItem" @share-item="shareItem" @view-comments="viewComments" @like-item="likeItem" @add-item="addToCart" @remove-item="removeFromCart" :product="product" />
     </div>
 </template>
