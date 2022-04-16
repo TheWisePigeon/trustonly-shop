@@ -83,9 +83,9 @@ const store = createStore({
             context.commit('removeFromCart', product)
         }
     },
-    // plugins: [createPersistedState({
-    //     storage: window.sessionStorage
-    // })]
+    plugins: [createPersistedState({
+        storage: window.sessionStorage
+    })]
 })
 
 export default store;
