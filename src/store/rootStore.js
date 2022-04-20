@@ -41,7 +41,7 @@ const store = createStore({
     },
     actions: {
         register(context, user) {
-            fetch('http://localhost:5000/v1/new/user', {
+            fetch('https://pacific-mesa-93933.herokuapp.com/v1/new/user', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -55,7 +55,7 @@ const store = createStore({
                 })
         },
         login(context, user) {
-            fetch('http://localhost:5000/v1/login', {
+            fetch('https://pacific-mesa-93933.herokuapp.com/v1/login', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

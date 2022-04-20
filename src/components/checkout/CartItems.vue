@@ -31,7 +31,7 @@ export default {
     methods: {
         async getItem(product) {
             return (
-                await fetch("http://localhost:5000/v1/product/" + product)
+                await fetch("https://pacific-mesa-93933.herokuapp.com/v1/product/" + product)
                     .then(response => response.json())
                     .then(json => {
                         return json

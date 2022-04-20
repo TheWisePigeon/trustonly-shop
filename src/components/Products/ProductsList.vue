@@ -12,7 +12,7 @@ export default {
     methods: {
         async fetchProducts() {
             this.isLoading = true
-            fetch("http://localhost:5000/v1/products")
+            fetch("https://pacific-mesa-93933.herokuapp.com/v1/products")
                 .then(response => response.json())
                 .then(json => {
                     this.products = json
