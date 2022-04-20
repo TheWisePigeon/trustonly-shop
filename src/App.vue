@@ -7,9 +7,11 @@ import store from './store/rootStore'
 </script>
 
 <template>
-  <AppBar />
-  <div class=" ">
-    <router-view></router-view>
-  </div>
-  <AppFooter />
+  <div >
+    <AppBar/>
+    <div class=" ">
+        <router-view/>
+    </div>
+    <AppFooter/>
+</div>
 </template>

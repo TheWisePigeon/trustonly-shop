@@ -22,7 +22,11 @@ export default {
             return this.products.reduce((acc, item) => {
                 return acc + item.price
             }, 0)
-        }
+        },
+        message(){
+            return "https://wa.me/22870291493?text=bruh"
+        },
+        
     },
     methods: {
         async getItem(product) {
@@ -59,13 +63,10 @@ export default {
             <p> </p>
         </div>
         <hr>
-        <p class=" font-bold text-center " >{{cartTotal}}$</p>
+        <p class=" font-bold text-center " >Total: {{cartTotal}}$</p>
         <div class=" items-center justify-center flex text-sm ">
             <button @click="$emit('pay-now')" class=" rounded-lg text-white p-4 shadow-lg bg-green-400">
-                Pay right away
-            </button>
-            <button @click="$emit('pay-later')" class=" rounded-lg text-white p-4 shadow-lg bg-green-400">
-                Pay on delivery
+                <a :href="message">Order now</a>
             </button>
         </div>
         <div>
