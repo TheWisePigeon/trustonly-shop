@@ -18,6 +18,11 @@ export default {
         cartCount() {
             return this.$store.state.cart.length
         },
+        cartTotal() {
+            return this.products.reduce((acc, item) => {
+                return acc + item.price
+            }, 0)
+        }
     },
     methods: {
         async getItem(product) {
@@ -28,7 +33,11 @@ export default {
                         return json
                     })
             )
-        }
+        },
+        remove(id) {
+            this.$store.dispatch("removeFromCart", id)
+            this.products.splice(this.products.findIndex(product => product._id === id), 1)
+        },
     },
     mounted() {
         for (let product of this.cart) {
@@ -43,14 +52,21 @@ export default {
 </script>
 
 <template>
-    <div class=" p-2">
+    <div class=" p-3 ">
         <h1 class=" text-xl">Your cart: {{ cartCount }} items </h1>
-        <div v-for="item in products" :key="item.id">
-            <cart-item :product="item" />
+        <div v-for="item in products" :key="item._id">
+            <cart-item :product="item" @remove="remove" />
             <p> </p>
         </div>
-        <div class=" text-center">
-            <button class=" rounded bg-green-400 px-3">Checkout</button>
+        <hr>
+        <p class=" font-bold text-center " >{{cartTotal}}$</p>
+        <div class=" items-center justify-center flex text-sm ">
+            <button @click="$emit('pay-now')" class=" rounded-lg text-white p-4 shadow-lg bg-green-400">
+                Pay right away
+            </button>
+            <button @click="$emit('pay-later')" class=" rounded-lg text-white p-4 shadow-lg bg-green-400">
+                Pay on delivery
+            </button>
         </div>
         <div>
         </div>

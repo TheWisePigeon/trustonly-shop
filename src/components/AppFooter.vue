@@ -14,8 +14,8 @@ export default {
 </script>
 
 <template>
-    <footer class=" text-center bg-gray-500 text-white bottom-0 fixed w-full">
-        <p>TrustOnly Shop copyright {{ new Date().getFullYear() }} </p>
+    <footer class=" text-center bg-gray-500 text-white bottom-0 absolute w-full">
+        <p>TrustOnly Shop {{ new Date().getFullYear() }} </p>
     </footer>
 
 </template>
