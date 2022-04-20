@@ -75,6 +75,7 @@ const store = createStore({
         },
         logout(context) {
             context.commit('logout')
+            router.replace('/')
         },
         addToCart(context, product) {
             context.commit('addToCart', product)
