@@ -13,7 +13,7 @@ export default {
 </script>
 
 <template>
-  <header class="  flex justify-between p-3 bg-green-500 shadow-lg mb-2">
+  <header class="  fixed top-0 left-0 right-0 flex justify-between p-3 bg-green-500 shadow-lg mb-2">
     <div class=" font-semibold text-xl">
       <router-link to="/">
         TrustShop
