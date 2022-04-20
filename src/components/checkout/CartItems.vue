@@ -1,6 +1,4 @@
 <script>
-import { loadScript } from '@paypal/paypal-js'
-let paypal = await loadScript({ "client-id":""})
 
 
 import CartItem from "./CartItem.vue"
@@ -12,7 +10,8 @@ export default {
     data() {
         return {
             cart: this.$store.state.cart,
-            isLoading: false
+            isLoading: false,
+            products: []
         }
     },
     computed: {
@@ -20,13 +19,33 @@ export default {
             return this.$store.state.cart.length
         },
     },
+    methods: {
+        async getItem(product) {
+            return (
+                await fetch("http://localhost:5000/v1/product/" + product)
+                    .then(response => response.json())
+                    .then(json => {
+                        return json
+                    })
+            )
+        }
+    },
+    mounted() {
+        for (let product of this.cart) {
+            this.getItem(product)
+                .then(json => {
+                    this.products.push(json)
+                })
+        }
+    },
 }
+
 </script>
 
 <template>
     <div class=" p-2">
         <h1 class=" text-xl">Your cart: {{ cartCount }} items </h1>
-        <div v-for="item in cart" :key="item.id">
+        <div v-for="item in products" :key="item.id">
             <cart-item :product="item" />
             <p> </p>
         </div>

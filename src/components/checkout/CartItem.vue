@@ -17,7 +17,7 @@ export default {
                 <div class="flex w-full space-x-2 sm:space-x-4">
                     <img class="flex-shrink-0 object-cover w-20 h-20  rounded outline-none sm:w-32 sm:h-32 "
                         :src="product.image"
-                        alt="Polaroid camera">
+                        >
                     <div class="flex flex-col justify-between w-full pb-4">
                         <div class="flex justify-between w-full pb-2 space-x-2">
                             <div class="space-y-1">

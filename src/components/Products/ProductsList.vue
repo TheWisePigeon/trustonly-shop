@@ -32,13 +32,13 @@ export default {
             console.log("like")
         },
         addToCart(product){
-            this.$store.dispatch("addToCart", product)
+            this.$store.dispatch("addToCart", product._id)
         },
         removeFromCart(product){
-            this.$store.dispatch("removeFromCart", product)
+            this.$store.dispatch("removeFromCart", product._id)
         },
         likeItem(product){
-            this.$store.dispatch("likeItem", product)
+            this.$store.dispatch("likeItem", product._id)
         }
 
     },
