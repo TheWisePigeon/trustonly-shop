@@ -23,12 +23,8 @@ const router = createRouter({
         },
         {
             path: '/cart',
-            component: () => import('./components/auth/LoginPage.vue')
-        },
-        {
-            path: '/test',
             component: () => import('./components/checkout/CartItems.vue')
-        }
+        },
     ]
 });
 

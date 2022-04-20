@@ -25,9 +25,6 @@ export default {
         shareItem(){
             console.log("share")
         },
-        viewComments(){
-            console.log("comment")
-        },
         likeItem(){
             console.log("like")
         },
@@ -56,6 +53,6 @@ export default {
         </div>
     </div>
     <div v-else class=" flex justify-center " v-for="product in products" :key="product._id">
-        <ProductItem @view-item="viewItem" @share-item="shareItem" @view-comments="viewComments" @like-item="likeItem" @add-item="addToCart" @remove-item="removeFromCart" :product="product" />
+        <ProductItem @view-item="viewItem" @share-item="shareItem" @like-item="likeItem" @add-item="addToCart" @remove-item="removeFromCart" :product="product" />
     </div>
 </template>
