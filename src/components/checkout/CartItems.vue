@@ -24,13 +24,13 @@ export default {
                 return acc + item.price
             }, 0)
         },
-        items(){
-            return this.products.map(item => {
-                this.items.push(item.name)
-            })
+        itemsName() {
+            return this.products.reduce((acc, item) => {
+                return acc + item.name
+            }, 0)
         },
         message(){
-            return "https://wa.me/22870291493?text=Bonjour%20je%20voudrais%20acheter%20un%20produit%20de%20la%20boutique%20:"
+            return `https://wa.me/22870291493?text=Bonjour%20je%20voudrais%20acheter%20un%20produit%20de%20la%20boutique%20:${itemsName}`
         },
         
     },
@@ -49,10 +49,7 @@ export default {
             this.products.splice(this.products.findIndex(product => product._id === id), 1)
         },
         see(){
-            this.products.map(item => {
-                this.items.push(item.name)
-            })
-            console.log(this.items);
+            console.log(this.message);
         }
     },
     mounted() {
