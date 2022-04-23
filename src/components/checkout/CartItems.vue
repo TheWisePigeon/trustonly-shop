@@ -11,7 +11,8 @@ export default {
         return {
             cart: this.$store.state.cart,
             isLoading: false,
-            products: []
+            products: [],
+            items: []
         }
     },
     computed: {
@@ -23,8 +24,13 @@ export default {
                 return acc + item.price
             }, 0)
         },
+        items(){
+            return this.products.map(item => {
+                this.items.push(item.name)
+            })
+        },
         message(){
-            return "https://wa.me/22870291493?text=Bonjour%20je%20voudrais%20acheter%20un%20produit%20de%20la%20boutique%20"
+            return "https://wa.me/22870291493?text=Bonjour%20je%20voudrais%20acheter%20un%20produit%20de%20la%20boutique%20:" + this.items.toString()
         },
         
     },
