@@ -30,7 +30,7 @@ export default {
             })
         },
         message(){
-            return "https://wa.me/22870291493?text=Bonjour%20je%20voudrais%20acheter%20un%20produit%20de%20la%20boutique%20:" + this.items.toString()
+            return "https://wa.me/22870291493?text=Bonjour%20je%20voudrais%20acheter%20un%20produit%20de%20la%20boutique%20:"
         },
         
     },
@@ -48,6 +48,9 @@ export default {
             this.$store.dispatch("removeFromCart", id)
             this.products.splice(this.products.findIndex(product => product._id === id), 1)
         },
+        see(){
+            console.log(items);
+        }
     },
     mounted() {
         for (let product of this.cart) {
@@ -70,6 +73,7 @@ export default {
         </div>
         <hr>
         <p class=" font-bold text-center " >Total: {{cartTotal}}$</p>
+        <button @click="see" >see items</button>
         <div class=" items-center justify-center flex text-sm ">
             <button @click="$emit('pay-now')" class=" rounded-lg text-white p-4 shadow-lg bg-green-400">
                 <a :href="message">Order now</a>
