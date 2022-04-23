@@ -24,7 +24,7 @@ export default {
             }, 0)
         },
         message(){
-            return "https://wa.me/22870291493?text=bruh"
+            return "https://wa.me/22870291493?text=Bonjour%20je%20voudrais%20acheter%20un%20produit%20de%20la%20boutique%20"
         },
         
     },
