@@ -49,7 +49,10 @@ export default {
             this.products.splice(this.products.findIndex(product => product._id === id), 1)
         },
         see(){
-            console.log(items);
+            this.products.map(item => {
+                this.items.push(item.name)
+            })
+            console.log(this.items);
         }
     },
     mounted() {
