@@ -7,5 +7,9 @@ export default defineNuxtConfig({
        postcss: {
            postcssOptions: require("./postcss.config")
        }
+   },
+   components:{
+       global: true,
+       dirs: ['~/components']
    }
 })
