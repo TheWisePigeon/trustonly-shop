@@ -11,14 +11,8 @@ export default {
                 <span class="text-2xl font-extrabold">TrustOnly</span>
             </NuxtLink>
             <div class="flex items-center space-x-1">
-                <ul class="hidden space-x-2 md:inline-flex">
-                    <li>
-                        <ItemsCart/>
-                    </li>
-                    <li>
-                        <Profile/>
-                    </li>
-                </ul>
+                <ItemsCart />
+                <Profile />
             </div>
         </div>
     </header>
