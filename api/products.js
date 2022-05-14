@@ -1,6 +1,6 @@
 export const products = [
     {
-        id:1,
+        id:"1",
         name: "Victago",
         image: "https://picsum.photos/200/300",
         description: "Pommade chauffante",
@@ -8,7 +8,7 @@ export const products = [
         price: 10,
     },
     {
-        id:2,
+        id:"2",
         name: "Samsung",
         image: "https://picsum.photos/200/300",
         description: "Samsung A5",
@@ -16,7 +16,7 @@ export const products = [
         price: 100,
     },
     {
-        id:3,
+        id:"3",
         name: "Saucisse",
         image: "https://picsum.photos/200/300",
         description: "Saucisse de porc",
@@ -24,7 +24,7 @@ export const products = [
         price: 5,
     },
     {   
-        id:4,
+        id:"4",
         name: "Redragon K55",
         image: "https://picsum.photos/200/300",
         description: "Clavier Gamer RGB",

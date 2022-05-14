@@ -1,7 +1,7 @@
 <script>
 export default {
     props: {
-        id: Number,
+        id: String,
         name: String,
         image: String,
         description: String,
@@ -15,12 +15,11 @@ export default {
 <template>
     <div class=" flex flex-col max-w-lg p-6 space-y-6  rounded-lg shadow-md ">
         <div>
-            <img :src="this.image" alt="" srcset="">
+            <img src="~/assets/pigeon.jpg" alt="" srcset="">
         </div>
         <div class="flex justify-between ">
-            <p>{{ this.name }}</p>
-            <span>{{ this.description }}</span>
-            <p>{{ this.price }} frcs</p>
+            <p>Name</p>
+            <p>Price </p>
         </div>
         <div class="flex justify-center ">
             <button v-if="1" >
