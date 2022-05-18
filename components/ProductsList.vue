@@ -5,7 +5,7 @@
     <div v-else>
       <h1 class=" text-center">Products</h1>
       <ul class=" space-y-2">
-        <li v-for="product in mountains" :key="product.id" >
+        <li v-for="product in products" :key="product.id" >
             <ProductPreview :name="product.name" :image="product.image" :price="product.price" :description="product.description"  />
         </li>
       </ul>
@@ -18,11 +18,11 @@
   export default {
     data() {
       return {
-        mountains: []
+        products: []
       }
     },
     async fetch() {
-      this.mountains = await fetch(
+      this.products = await fetch(
         'https://trustbackend.herokuapp.com'
       ).then(res => res.json())
     }

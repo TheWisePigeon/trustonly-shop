@@ -1,34 +1,54 @@
 <template>
-    	<div class="max-w-lg p-4 shadow-md ">
+	<div class="max-w-lg p-4 shadow-md ">
 		<div class="flex justify-between pb-4 border-bottom">
 			<div class="flex items-center">
-				<a class="mb-0 capitalize ">{{name}}</a>
+				<a class=" font-bold ">{{ name }}</a>
 			</div>
 		</div>
 		<div class="space-y-4">
 			<div class="space-y-2">
 				<img :src="image" alt="" class="block object-cover object-center w-full rounded-md h-72 ">
-				<div class="flex items-center text-xs">
-					<span>{{price}}</span>
+				<p class=" font-extrabold">{{price}}xof</p>
+			</div>
+			<div class=" flex justify-between" >
+				<p>{{description}}</p>
+				<div class=" flex justify-between">
+					<button @click="add" v-if="inCart" >+</button>
+					<button @click="remove" v-else >-</button>
 				</div>
 			</div>
-			<div >
-				<a  class="block">
-					<h3 class="text-xl font-semibold ">{{description}}</h3>
-				</a>
-				</div>
 		</div>
 	</div>
 </template>
 
 <script>
 export default {
-    props: {
-        id: Number,
-        name: String,
-        description: String,
-        image: String,
-        price: Number
-    }
+	props: {
+		id: Number,
+		name: String,
+		description: String,
+		image: String,
+		price: Number
+	},
+	data(){
+		return {
+			added: false
+		}
+	},
+	methods:{
+		add(){
+			console.log("Add")
+			this.added = true
+		},
+		remove(){
+			console.log("Remove")
+			this.added = false
+		}
+	},
+	computed:{
+		inCart(){
+			return !this.added ? true : false
+		}
+	}
 }
 </script>
